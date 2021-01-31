@@ -14,18 +14,18 @@ module.exports = ({config, env, empEnv}) => {
   config.plugin('mf').tap(args => {
     args[0] = {
       ...args[0],
-        name: "empReactProject",
-        remotes: {
-          "@emp/react-base": "empReactBase@http://localhost:8001/emp.js"
-        },
-        exposes: {
-          "./components/Hello": "src/components/Hello",
-          "./helper": "src/helper"
-        },
-        shared: {
-        },
-        // 被远程引入的文件名
-        filename: 'emp.js',
+      name: "empReactProject",
+      remotes: {
+        "@emp/react-base": "empReactBase@http://localhost:8001/emp.js"
+      },
+      exposes: {
+        "./components/Hello": "src/components/Hello",
+        "./helper": "src/helper"
+      },
+      shared: {
+      },
+      // 被远程引入的文件名
+      filename: 'emp.js',
     }
     return args
   })

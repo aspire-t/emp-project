@@ -27,8 +27,6 @@ module.exports = ({config, env}) => {
       shared: {},
       // 被远程引入的文件名
       filename: 'emp.js',
-      // 暴露项目的全局变量名
-      // library: { type: 'var', name: projectName },
     }
     return args
   })

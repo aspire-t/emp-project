@@ -1,15 +1,13 @@
 const env = process.env.EMP_ENV || 'dev'
 const dev = {
   host: 'localhost',
-  port: 8005,
-  publicPath: 'http://localhost:8005/',
-  baseRemote: 'http://localhost:8006',
+  port: 8004,
+  publicPath: 'http://localhost:8004/',
 }
 const prod = {
   host: 'localhost',
-  port: 8005,
-  publicPath: 'http://localhost:8005/',
-  baseRemote: 'http://localhost:8006',
+  port: 8004,
+  publicPath: 'http://localhost:8004/',
 }
 const configs = {dev, prod}
 exports.getConfig = env => {

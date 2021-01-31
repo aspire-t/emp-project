@@ -1,16 +1,19 @@
 {
-  "name": "@empvue3/base",
+  "name": "@empreactvue/vue",
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
+  "private": true,
   "devDependencies": {
-    "@efox/emp-cli": "latest",
-    "@efox/emp-vue3": "latest",
-    "@vue/compiler-sfc": "^3.0.0-rc.10",
-    "vue-loader": "^16.0.0-beta.5"
+    "@efox/emp-cli": "^1.4.0",
+    "vue-loader": "^15.9.5",
+    "vue-template-compiler": "^2.6.12"
   },
   "dependencies": {
-    "vue": "^3.0.0-rc.10"
+    "react": "^16.6.3",
+    "react-dom": "^16.6.3",
+    "vue": "^2.6.12",
+    "vuera": "^0.2.7"
   },
   "scripts": {
     "dev": "emp dev",
