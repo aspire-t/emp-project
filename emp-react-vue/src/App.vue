@@ -2,6 +2,7 @@
   <div>
     <Content title="I am Vue Project" />
     <hello-react title="Vue use Remote React Component" />
+    <!-- <hello-react-test title="vue 22222222222222"></hello-react-test> -->
   </div>
 </template>
 
@@ -26,7 +27,8 @@ export default {
   name: "APP",
   components: {
     Content,
-    "hello-react": HelloReact
+    "hello-react": HelloReact,
+    // HelloReactTest: ( res )=>import('ReactComponents/components/Hello')
   },
   data() {
     return {};

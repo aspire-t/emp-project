@@ -3,7 +3,7 @@ import * as ReactDOM from 'react-dom'
 
 import Hello from 'src/components/Hello'
 import Content from '@emp/vueComponents/Content.vue'
-import {VueInReact} from 'vuera'
+import { VueInReact } from 'vuera'
 
 const VueComponent = VueInReact(Content)
 
