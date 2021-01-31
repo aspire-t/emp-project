@@ -1,7 +1,8 @@
 const path = require('path')
 const packagePath = path.join(path.resolve('./'), 'package.json')
-const {dependencies} = require(packagePath)
-module.exports = ({config, env}) => {
+const { dependencies } = require(packagePath)
+
+module.exports = ({ config, env }) => {
   const port = 8001
   const projectName = 'empReactBase'
   const publicPath = `http://localhost:${port}/`
@@ -9,31 +10,33 @@ module.exports = ({config, env}) => {
   config.output.publicPath(publicPath)
   // 设置项目端口
   config.devServer.port(port)
-  config.plugin('mf').tap(args => {
+  // config.resolve.alias.set('@', path.resolve('./', 'src'))
+  config.plugin('mf').tap((args) => {
     args[0] = {
       ...args[0],
       // 项目名称
       name: 'empReactBase',
-      // 远程项目别名：远程引入的项目名
       remotes: {
-        '@emp/react-project': 'empReactProject@http://localhost:8002/emp.js',
+        // 远程项目别名：远程引入的项目名
+        '@emp/react-project': 'empReactProject@http://localhost:8002/emp.js'
       },
-      // 需要暴露出去的组件
+      // 需要暴露的东西
       exposes: {
         './configs/index': 'src/configs/index',
         './components/Demo': 'src/components/Demo',
         './components/Hello': 'src/components/Hello',
       },
+      // 需要共享的依赖
       shared: {},
       // 被远程引入的文件名
       filename: 'emp.js',
       // 暴露项目的全局变量名
-      // library: { type: 'var', name: projectName },
+      // library: { type: 'var', name: projectName }
     }
     return args
   })
   // 配置 index.html
-  config.plugin('html').tap(args => {
+  config.plugin('html').tap((args) => {
     args[0] = {
       ...args[0],
       ...{
